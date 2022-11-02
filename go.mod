@@ -1,6 +1,6 @@
 module github.com/fbsobreira/gotron-sdk
 
-go 1.17
+go 1.18
 
 require (
 	github.com/araddon/dateparse v0.0.0-20200409225146-d820a6159ab1
