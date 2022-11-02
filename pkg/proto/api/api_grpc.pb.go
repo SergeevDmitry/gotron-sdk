@@ -4,7 +4,7 @@ package api
 
 import (
 	context "context"
-	core "github.com/fbsobreira/gotron-sdk/pkg/proto/core"
+	core "github.com/SergeevDmitry/gotron-sdk/pkg/proto/core"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

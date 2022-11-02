@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/SergeevDmitry/gotron-sdk/pkg/address"
+	"github.com/SergeevDmitry/gotron-sdk/pkg/common"
+	"github.com/SergeevDmitry/gotron-sdk/pkg/proto/core"
 	"github.com/fatih/structs"
-	"github.com/fbsobreira/gotron-sdk/pkg/address"
-	"github.com/fbsobreira/gotron-sdk/pkg/common"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
 	"github.com/spf13/cobra"
 )
 

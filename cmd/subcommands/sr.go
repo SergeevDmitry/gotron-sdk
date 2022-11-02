@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/fbsobreira/gotron-sdk/pkg/address"
-	"github.com/fbsobreira/gotron-sdk/pkg/client/transaction"
-	"github.com/fbsobreira/gotron-sdk/pkg/common"
-	"github.com/fbsobreira/gotron-sdk/pkg/keystore"
-	"github.com/fbsobreira/gotron-sdk/pkg/store"
+	"github.com/SergeevDmitry/gotron-sdk/pkg/address"
+	"github.com/SergeevDmitry/gotron-sdk/pkg/client/transaction"
+	"github.com/SergeevDmitry/gotron-sdk/pkg/common"
+	"github.com/SergeevDmitry/gotron-sdk/pkg/keystore"
+	"github.com/SergeevDmitry/gotron-sdk/pkg/store"
 	"github.com/spf13/cobra"
 )
 
