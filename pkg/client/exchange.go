@@ -7,7 +7,7 @@ import (
 	"github.com/fbsobreira/gotron-sdk/pkg/common"
 	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
 	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 )
 
 // ExchangeList of bancor TRC10, use page -1 to list all
@@ -38,7 +38,7 @@ func (g *GrpcClient) ExchangeByID(id int64) (*core.Exchange, error) {
 		return nil, err
 	}
 	if result.ExchangeId != id {
-		return nil, fmt.Errorf("Exchange does not exists")
+		return nil, fmt.Errorf("exchange does not exists")
 	}
 	return result, nil
 }

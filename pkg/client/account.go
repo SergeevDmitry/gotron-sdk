@@ -10,7 +10,7 @@ import (
 	"github.com/fbsobreira/gotron-sdk/pkg/common"
 	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
 	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 )
 
 // GetAccount from BASE58 address
@@ -269,7 +269,7 @@ func makePermission(name string, pType core.Permission_PermissionType, id int32,
 		})
 	}
 	var bigOP *big.Int
-	if operations != nil && len(operations) > 0 {
+	if len(operations) > 0 {
 		bigOP = big.NewInt(0)
 		for k, o := range operations {
 			if o {
