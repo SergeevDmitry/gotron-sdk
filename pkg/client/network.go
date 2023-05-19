@@ -41,7 +41,7 @@ func (g *GrpcClient) TotalTransaction() (*api.NumberMessage, error) {
 		new(api.EmptyMessage))
 }
 
-//GetTransactionByID returns transaction details by ID
+// GetTransactionByID returns transaction details by ID
 func (g *GrpcClient) GetTransactionByID(id string) (*core.Transaction, error) {
 	transactionID := new(api.BytesMessage)
 	var err error
@@ -64,7 +64,7 @@ func (g *GrpcClient) GetTransactionByID(id string) (*core.Transaction, error) {
 	return nil, fmt.Errorf("transaction info not found")
 }
 
-//GetTransactionInfoByID returns transaction receipt by ID
+// GetTransactionInfoByID returns transaction receipt by ID
 func (g *GrpcClient) GetTransactionInfoByID(id string) (*core.TransactionInfo, error) {
 	transactionID := new(api.BytesMessage)
 	var err error
@@ -85,6 +85,21 @@ func (g *GrpcClient) GetTransactionInfoByID(id string) (*core.TransactionInfo, e
 		return txi, nil
 	}
 	return nil, fmt.Errorf("transaction info not found")
+}
+
+// GetTransactionInfoByBlockNum returns TransactionInfo data for all transactions contained in a specified block
+func (g *GrpcClient) GetTransactionInfoByBlockNum(num int64) (*api.TransactionInfoList, error) {
+	blockNum := new(api.NumberMessage)
+	blockNum.Num = num
+
+	ctx, cancel := g.getContext()
+	defer cancel()
+
+	list, err := g.Client.GetTransactionInfoByBlockNum(ctx, blockNum)
+	if err != nil {
+		return nil, err
+	}
+	return list, nil
 }
 
 // Broadcast broadcast TX
